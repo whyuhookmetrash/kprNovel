@@ -8,6 +8,13 @@ interface Scene {
   options: Array<{
     text: string;
     nextIndex: number;
+    consequence: number;
+    branching: number;
+    branches: Array<{
+      condition: number;
+      nextIndex: number;
+      consequence: number;
+    }>;
   }>;
 }
 
@@ -15,14 +22,16 @@ interface StoryData {
   scenes: Scene[];
 }
 
+let booleanArray = new Array(10).fill(false);
+
 const initialStoryData: StoryData = {
   scenes: [
     {
       image: 'scene0', // замените на ключ изображения
       text: 'Это текст первой сцены.',
       options: [
-        { text: 'Перейти ко второй сцене', nextIndex: 1 },
-        { text: 'Перейти к третьей сцене', nextIndex: 2 },
+        { text: 'Перейти к первой сцене', nextIndex: 1, consequence: 0, branching: 0, branches: [] },
+        { text: 'Перейти ко второй сцене', nextIndex: 1, consequence: 0, branching: 0, branches: [] },
       ]
     }
   ],
@@ -51,6 +60,36 @@ export default function Index() {
   const currentScene = storyData.scenes[currentIndex];
   const imageSource = { uri: images[currentScene.image] };
 
+  const handleOptionSelect = (nextIndex:number, branching:number, consequence:number, branches:any) => {
+    let br = false;
+    if (branching === 1) {
+      console.log("branching");
+      branches.map((value:any, index:any) => {
+      console.log(value.condition);
+      console.log(booleanArray[value.condition]);
+      if (booleanArray[value.condition] && !br) {
+        console.log("true branch");
+        br = true;
+        if (value.consequence !== 999) {
+          booleanArray[value.consequence] = true;
+        }
+        setCurrentIndex(value.nextIndex);
+      }
+    })
+  }
+  if (!br) 
+  {
+    console.log("not return");
+    if (consequence !== 999) {
+      booleanArray[consequence] = true;
+      console.log(booleanArray[consequence]);
+      console.log(consequence);
+    }
+    setCurrentIndex(nextIndex); 
+
+  }
+  };
+
   return (
     <View style={styles.container}>
       <Image source={imageSource} style={styles.image} resizeMode="contain" />
@@ -58,7 +97,7 @@ export default function Index() {
         <Text style={styles.overlayTextOutline}>{currentScene.text}</Text>
 
         {currentScene.options.map((option, index) => (
-          <Button key={index} title={option.text} onPress={() => setCurrentIndex(option.nextIndex)}  color="#5c5c5c"/>
+          <Button key={index} title={option.text} onPress={() => handleOptionSelect(option.nextIndex, option.branching, option.consequence, option.branches)}  color="#5c5c5c"/>
         ))}
 
       </View>

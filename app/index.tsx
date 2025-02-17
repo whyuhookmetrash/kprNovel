@@ -22,7 +22,7 @@ interface StoryData {
   scenes: Scene[];
 }
 
-let booleanArray = new Array(10).fill(false);
+let booleanArray = new Array(11).fill(false);
 
 const initialStoryData: StoryData = {
   scenes: [
@@ -63,12 +63,8 @@ export default function Index() {
   const handleOptionSelect = (nextIndex:number, branching:number, consequence:number, branches:any) => {
     let br = false;
     if (branching === 1) {
-      console.log("branching");
       branches.map((value:any, index:any) => {
-      console.log(value.condition);
-      console.log(booleanArray[value.condition]);
       if (booleanArray[value.condition] && !br) {
-        console.log("true branch");
         br = true;
         if (value.consequence !== 999) {
           booleanArray[value.consequence] = true;
@@ -79,11 +75,8 @@ export default function Index() {
   }
   if (!br) 
   {
-    console.log("not return");
     if (consequence !== 999) {
       booleanArray[consequence] = true;
-      console.log(booleanArray[consequence]);
-      console.log(consequence);
     }
     setCurrentIndex(nextIndex); 
 

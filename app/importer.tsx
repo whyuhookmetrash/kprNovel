@@ -1,7 +1,34 @@
 const images = {
     scene0: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene0.jpg?raw=true",
     scene1: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene1.jpg?raw=true",
-    scene2: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene2.jpg?raw=true"
+    scene2: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene2.jpg?raw=true",
+    scene3: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene3.jpg?raw=true",
+    scene4: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene4.jpg?raw=true",
+    scene5: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene5.jpg?raw=true",
+    scene6: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene6.jpg?raw=true",
+    scene7: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene7.jpg?raw=true",
+    scene8: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene8.jpg?raw=true",
+    scene9: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene9.jpg?raw=true",
+    scene10: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene10.jpg?raw=true",
+    scene11: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene11.jpg?raw=true",
+    scene12: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene12.jpg?raw=true",
+    scene13: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene13.jpg?raw=true",
+    scene14: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene14.jpg?raw=true",
+    scene15: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene15.jpg?raw=true",
+    scene16: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene16.jpg?raw=true",
+    scene17: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene17.jpg?raw=true",
+    scene18: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene18.jpg?raw=true",
+    scene19: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene19.jpg?raw=true",
+    scene20: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene20.jpg?raw=true",
+    scene21: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene21.jpg?raw=true",
+    scene22: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene22.jpg?raw=true",
+    scene23: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene23.jpg?raw=true",
+    scene24: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene24.jpg?raw=true",
+    scene25: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene25.jpg?raw=true",
+    scene26: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene26.jpg?raw=true",
+    scene27: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene27.jpg?raw=true",
+    scene28: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene28.jpg?raw=true",
+    scene29: "https://github.com/whyuhookmetrash/kprNovelData/blob/main/images/scene29.jpg?raw=true"
   } as const;
   export type ImageKeys = keyof typeof images;
   export default images;
